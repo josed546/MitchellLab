@@ -12,8 +12,6 @@ import People from './pages/People.vue';
 import Positions from './pages/Positions.vue';
 import News from './pages/News.vue';
 
-
-
 const routes = [
     { path: '/', component: Home },
     { path: '/research', component: Research },

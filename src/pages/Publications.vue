@@ -22,33 +22,37 @@
     </div>
 </template>
 
-<script setup >
+<script setup lang="ts">
     import { onMounted, ref } from 'vue';
     import { Accordion, AccordionPanel, AccordionHeader, AccordionContent, Image } from 'primevue';
-    import {publications} from '../publications';
-    const imagePaths = import.meta.glob('../assets/publications/*.{png,jpg,jpeg,svg,webp,gif}', { eager: true });
+    import {publications, Publication} from '../publications';
+    const imagePaths = import.meta.glob<Record<string,string>>('../assets/publications/*.{png,jpg,jpeg,svg,webp,gif}', { eager: true });
 
-    const fileObjects = ref({})
-    const years = ref([])
-    const groupedPubs = ref([])
+    const fileObjects = ref<{[key: string]: string}>({})
+    const years = ref<number[]>([])
+    const groupedPubs = ref<{[year: number]: Publication[]}>({})
 
     // TODO I could do a filter pretty easily if it's by tag. Have a new field in publications for a list of tags
     // Then filter the original publications array by tag, and then rerun the stuff below to get all the proper pubs
     onMounted(() => {
         // get all images and map them to their indexes
-        Object.values(imagePaths).map((image, index) => {
-            const fileName = image.default
-                .split('/')
-                .pop()           // Get the last part after '/'
-                .split('.')[0];  // Get everything before the extension
-            fileObjects.value[fileName] = image.default
+        Object.values(imagePaths).map((image) => {
+            if(image && image.default){
+                // get the file name
+                let fileName = image.default.split('/').pop()?.split('.')[0] || '';
+                if(fileName){
+                    fileName = fileName.split("-")[0]
+                }
+                fileObjects.value[fileName] = image.default
+            }
         })
+        console.log(fileObjects)
 
         // get all the unique years, then reverse them
         years.value = Array.from(new Set(publications.map((pub) => pub.year))).reverse()
 
         // get all publications, group them by year, add the file location
-        groupedPubs.value = publications.reduce((groups, pub) => {
+        groupedPubs.value = publications.reduce((groups: {[year: number]: Publication[]}, pub) => {
             // Create array for this year if it doesn't exist
             if (!groups[pub.year]) {
                 groups[pub.year] = [];
@@ -64,10 +68,8 @@
         }, {});
 
         Object.keys(groupedPubs.value).forEach(year => {
-            groupedPubs.value[year].reverse();
+            groupedPubs.value[Number(year)].reverse();
         });
-
-        console.log(groupedPubs.value)
 
     })
     

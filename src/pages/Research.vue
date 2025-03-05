@@ -125,8 +125,7 @@
     </div>
 </template>
 
-<script setup>
-    import { onMounted, ref } from 'vue';
+<script setup lang="ts">
     import { Card, Image } from 'primevue';
     import mRNA from '../assets/research/Figure-1-mRNA-Therapeutics-and-Vaccines-Solid-background.png'
     import nrdd from '../assets/research/NRDD_Figure.png'

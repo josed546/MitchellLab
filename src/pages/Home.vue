@@ -104,14 +104,14 @@
     </div>
 </template>
   
-<script setup>
+<script setup lang='ts'>
     import { onMounted, ref } from 'vue';
     import Galleria from 'primevue/galleria';
     import { Card, Image } from 'primevue';
     import image from '../assets/cancercell.png';
-    const imagePaths = import.meta.glob('../assets/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
+    const imagePaths = import.meta.glob<Record<string,string>>('../assets/gallery/*.{png,jpg,jpeg,svg}', { eager: true });
 
-    const images = ref([]);
+    const images = ref<{src: string, alt: string}[]>([]);
 
     onMounted(() => {
         images.value = Object.values(imagePaths).map((image, index) => {

@@ -4,6 +4,7 @@ export interface Publication {
     authors: string;
     journalYear: string;
     year: number;
+    image?: string;
 }
 
 

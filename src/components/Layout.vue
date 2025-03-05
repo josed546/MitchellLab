@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup lang='ts'>
     import { ref } from 'vue';
     import { RouterView } from 'vue-router';
     import { useRouter } from 'vue-router'
     import Menubar from 'primevue/menubar';
     import Image from 'primevue/image';
-    import ToggleSwitch from 'primevue/toggleswitch';
+    // import ToggleSwitch from 'primevue/toggleswitch';
     import 'primeicons/primeicons.css'
 
 
@@ -60,12 +60,12 @@
     ])
 
     // Dark mode toggle
-    const isDark = ref(false);
+    // const isDark = ref(false);
 
-    const toggleDarkMode = () => {
-        isDark.value = !isDark.value;
-        document.documentElement.classList.toggle('my-app-dark');
-    }
+    // const toggleDarkMode = () => {
+    //     isDark.value = !isDark.value;
+    //     document.documentElement.classList.toggle('my-app-dark');
+    // }
 </script>
 
 <template>
