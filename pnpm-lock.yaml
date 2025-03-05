@@ -13,7 +13,7 @@ importers:
         version: 4.2.4
       '@tailwindcss/vite':
         specifier: ^4.0.9
-        version: 4.0.9(vite@6.0.3(jiti@2.4.2)(lightningcss@1.29.1))
+        version: 4.0.9(vite@6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1))
       airtable:
         specifier: ^0.12.2
         version: 0.12.2
@@ -39,15 +39,18 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.6.3))
     devDependencies:
+      '@types/node':
+        specifier: ^22.13.9
+        version: 22.13.9
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
-        version: 5.2.1(vite@6.0.3(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.6.3))
+        version: 5.2.1(vite@6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.6.3))
       typescript:
         specifier: ~5.6.2
         version: 5.6.3
       vite:
         specifier: ^6.0.1
-        version: 6.0.3(jiti@2.4.2)(lightningcss@1.29.1)
+        version: 6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1)
       vue-tsc:
         specifier: ^2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -419,6 +422,9 @@ packages:
   '@types/node@14.18.63':
     resolution: {integrity: sha512-fAtCfv4jJg+ExtXhvCkCqUKZ+4ok/JQk01qDKhL5BDDoS3AxKXhV5/MAVUZyQnSEd2GT92fkgZl0pz0Q0AzcIQ==}
 
+  '@types/node@22.13.9':
+    resolution: {integrity: sha512-acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==}
+
   '@vitejs/plugin-vue@5.2.1':
     resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -690,6 +696,9 @@ packages:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   vite@6.0.3:
     resolution: {integrity: sha512-Cmuo5P0ENTN6HxLSo6IHsjCLn/81Vgrp81oaiFFMRa8gGDj5xEjIcEpf2ZymZtZR8oU0P2JX5WuUp/rlXcHkAw==}
@@ -981,21 +990,25 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.0.9
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.9
 
-  '@tailwindcss/vite@4.0.9(vite@6.0.3(jiti@2.4.2)(lightningcss@1.29.1))':
+  '@tailwindcss/vite@4.0.9(vite@6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1))':
     dependencies:
       '@tailwindcss/node': 4.0.9
       '@tailwindcss/oxide': 4.0.9
       lightningcss: 1.29.1
       tailwindcss: 4.0.9
-      vite: 6.0.3(jiti@2.4.2)(lightningcss@1.29.1)
+      vite: 6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1)
 
   '@types/estree@1.0.6': {}
 
   '@types/node@14.18.63': {}
 
-  '@vitejs/plugin-vue@5.2.1(vite@6.0.3(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.6.3))':
+  '@types/node@22.13.9':
     dependencies:
-      vite: 6.0.3(jiti@2.4.2)(lightningcss@1.29.1)
+      undici-types: 6.20.0
+
+  '@vitejs/plugin-vue@5.2.1(vite@6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.6.3))':
+    dependencies:
+      vite: 6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1)
       vue: 3.5.13(typescript@5.6.3)
 
   '@volar/language-core@2.4.10':
@@ -1288,12 +1301,15 @@ snapshots:
 
   typescript@5.6.3: {}
 
-  vite@6.0.3(jiti@2.4.2)(lightningcss@1.29.1):
+  undici-types@6.20.0: {}
+
+  vite@6.0.3(@types/node@22.13.9)(jiti@2.4.2)(lightningcss@1.29.1):
     dependencies:
       esbuild: 0.24.0
       postcss: 8.4.49
       rollup: 4.28.1
     optionalDependencies:
+      '@types/node': 22.13.9
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.1

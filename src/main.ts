@@ -6,7 +6,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import { MitchellPreset } from './preset';
 
 import Home from './pages/Home.vue';
-import Research from './pages/Publications.vue';
+import Research from './pages/Research.vue';
 import Publications from './pages/Publications.vue';
 import People from './pages/People.vue';
 import Positions from './pages/Positions.vue';

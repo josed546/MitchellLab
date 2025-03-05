@@ -12,7 +12,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <a class="twitter-timeline" href="https://twitter.com/MJMitchell_Lab?ref_src=twsrc%5Etfw">Tweets by MJMitchell_Lab</a>
+    <div class="mx-70 mt-20">
+        <a class="twitter-timeline" href="https://twitter.com/MJMitchell_Lab?ref_src=twsrc%5Etfw">Tweets by MJMitchell_Lab</a>
+    </div>
 </template>
 
 <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
