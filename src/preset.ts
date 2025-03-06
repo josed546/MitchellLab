@@ -42,6 +42,9 @@ export const MitchellPreset = definePreset(Aura, {
         menubar: {
             background: '#D39B78',
             borderRadius: '0px',
+            submenu: {
+                background: '#D39B78',
+            },
             item: {
                 color: '#EAD6A1',
                 focus: {

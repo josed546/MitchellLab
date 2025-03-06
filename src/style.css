@@ -31,6 +31,7 @@ body {
   display: flex;
   place-items: center;
   width: 100vw;
+  font-family: "Times New Roman", Times, serif;
   /* min-height: 100vh; */
 }
 
