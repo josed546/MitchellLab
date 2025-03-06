@@ -40,7 +40,6 @@
 <script setup lang='ts'>
   import { ref } from 'vue';
   import { RouterLink, RouterView } from 'vue-router';
-  import { useRouter } from 'vue-router'
   import Menubar from 'primevue/menubar';
   import Image from 'primevue/image';
   // import ToggleSwitch from 'primevue/toggleswitch';
