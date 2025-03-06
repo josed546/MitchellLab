@@ -3,28 +3,6 @@
     <div class="grid grid-cols-10 gap-5 p-4 justify-items-center">
         <!-- Top row cards -->
         <div class="col-start-2 col-span-8 grid grid-cols-3 gap-5">
-            <Card class="h-[510px]">
-                <template #title>
-                    <h2 class="text-3xl">
-                        <a href="https://directory.seas.upenn.edu/michael-j-mitchell/" target="_blank">
-                            Michael J. Mitchell, Ph.D.
-                        </a>
-                    </h2>
-                </template>
-                <template #subtitle>
-                    <p>Photo by Kevin Monko</p>
-                </template>
-                <template #content>
-                    <Image 
-                        :src="image"
-                        alt="Image 1" 
-                        :pt="{
-                            image: 'justify-self-center object-cover',
-                            preview: 'backdrop-blur-sm'
-                        }"
-                    />
-                </template>
-            </Card>
 
             <Card>
                 <template #title>
@@ -61,6 +39,29 @@
                             </a>
                         </div>
                     </div>
+                </template>
+            </Card>
+
+            <Card class="h-[510px]">
+                <template #title>
+                    <h2 class="text-3xl">
+                        <a href="https://directory.seas.upenn.edu/michael-j-mitchell/" target="_blank">
+                            Michael J. Mitchell, Ph.D.
+                        </a>
+                    </h2>
+                </template>
+                <template #subtitle>
+                    <p>Photo by Kevin Monko</p>
+                </template>
+                <template #content>
+                    <Image 
+                        :src="image"
+                        alt="Image 1" 
+                        :pt="{
+                            image: 'justify-self-center object-cover',
+                            preview: 'backdrop-blur-sm'
+                        }"
+                    />
                 </template>
             </Card>
             
