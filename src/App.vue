@@ -50,7 +50,6 @@
   import mitchellGreen from "./assets/mitchell_green.png";
   import pennLogo from "./assets/UPenn_FullLogo.png"
 
-  const router = useRouter()
   // Items for menu bar
   const items = ref([
       {
