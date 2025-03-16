@@ -1,5 +1,5 @@
 <template>
-  <Menubar class="menu z-1" :model="items">
+  <Menubar class="menu z-2" :model="items">
       <template #start>
           <Image class="logo" :src="mitchellGreen" alt="Image" width="100" />
       </template>
@@ -26,12 +26,12 @@
       </template> -->
   </Menubar>
   
-  <main class="min-h-[90vh] mt-27 z-0 bg-surface-100">
+  <main class="min-h-[90vh] mt-27 z-1 bg-surface-100 ">
       <RouterView />
   </main>
   
 
-  <footer class="footer items-start pt-1 pl-2">
+  <footer class="footer items-start pt-1 pl-2 z-2">
       <!-- Add your footer content here -->
        <Image  :src="pennLogo" width="120"/>
   </footer>
